@@ -1,0 +1,51 @@
+.link_members{
+  font-size: 1.1em;
+  color: #4169E1;
+  list-style-type: none;
+}
+
+.form_field{
+  color: 184096;
+  font-weight: bold;
+}
+
+
+.like, .dislike {
+    font-size: 11px;
+}
+.qty1, .qty2 {
+    border: none;
+    width:20px;
+    background: transparent;
+}
+hr {
+    border: none;
+    background-color: #D0C3DE;
+    color: #D0C3DE;
+    height: 2px;
+   }
+
+
+
+   #container {
+   width: 152px;
+   margin: 0 auto;
+   }
+   #panel {
+   background: #1ca8f6;
+   height: 230px;
+   display: none;
+   }
+   .button {
+   background: url(button.gif) no-repeat;
+   width: 152px;
+   height: 40px;
+   border-top: #333 dotted 1px;
+   text-align: center;
+   padding: 7px 0 0;
+   }
+   .buttontext {
+   font-weight: bold;
+   font-size: 1.2em;
+   text-shadow: 1px 1px 1px #666;
+   }

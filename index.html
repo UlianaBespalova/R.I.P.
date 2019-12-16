@@ -1,0 +1,151 @@
+</<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Draw graph</title>
+
+    <!-- my CSS -->
+    <link rel='stylesheet' href='ss-s.css' type='text/css'>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel='stylesheet' href='/css/bootstrap.min.css' type='text/css' media='all'>
+
+    <script language="javascript" type="text/javascript" src="jquery/jquery.js"></script>
+    <script language="javascript" type="text/javascript" src="jquery/jquery.flot.js"></script>
+
+  </head>
+
+
+
+  <body>
+    <div class="container px-lg-0 my-5">
+      <div class="row mx-lg-n5">
+        <div class="col-sm-9 ">
+           <div>
+             <div class="row mb-3">
+               <h4>
+                 <span class="col-3"><a href="#" style="color: #000080; text-decoration:none" > Draw function graph</a></span>
+               </h4>
+             </div>
+             <br><br>
+             <form method="POST">
+               <div class="form-group row ml-lg-4">
+                 <label for="a1" class="col-sm-2 col-form-label"><span class="form_field">From:</span></label>
+                   <div class="col-md-4 ml-lg-n5">
+                     <input id="x" name = "x" type="text" class="form-control" value = "-10">
+                   </div>
+               </div>
+
+               <form>
+                 <div class="form-group row ml-lg-4">
+                   <label for="the_login" class="col-sm-2 col-form-label"><span class="form_field">To:</span></label>
+                     <div class="col-md-4 ml-lg-n5">
+                       <input name = "y" type="text" class="form-control" id="y" value = "10">
+                     </div>
+                 </div>
+
+
+                 <form>
+                   <div class="form-group row ml-lg-4">
+                     <label for="the_login" class="col-sm-2 col-form-label"><span class="form_field">Points:</span></label>
+                       <div class="col-md-4 ml-lg-n5">
+                         <input name = "hop" type="text" class="form-control" id="points" value = "100">
+                       </div>
+                   </div>
+
+
+               <div class="form-group row ml-lg-4">
+                 <label for="the_password" class="col-sm-2 col-form-label"><span class="form_field">Func:</span></label>
+                   <div class="col-md-4 ml-lg-n5">
+                       <input name="func" type="text" class="form-control" id="func">
+                   </div>
+               </div>
+
+
+               <div class="row">
+               <div class="col-4"></div>
+                 <div class="col-4 align-self-end">
+                    &nbsp&nbsp
+                    <button id="redraw" class="btn btn-outline-primary mt-2 my-sm-02" type="submit">&nbsp&nbsp&nbspOK!&nbsp&nbsp&nbsp</button>
+                 </div>
+               </div>
+             </form>
+
+             <br><br>
+             <div class="row">
+             <div class="col-4"></div>
+               <div class="col-4 align-center">
+  <div class="form_field" id="legend"></div>
+
+  </div>
+  </div>
+
+  <div id="placeholder" style="width:650px;height:400px"></div>
+          </div>
+        </div>
+      </div>
+      </div>
+
+
+
+
+<script type="text/javascript">
+$(function () {
+	re_plot();
+
+	function re_plot() {
+		var from = parseInt($("#x").val());
+		var to = parseInt($("#y").val());
+    var points = parseInt($("#points").val());
+
+    if (points <1)
+    {
+      points = 10;
+    }
+    var hop = (to-from)/points;
+
+    let fun = ($("#func").val());
+    var d1 = [];
+
+		for (var x = from; x <= to; x += hop)
+		{
+      var di = [x, eval(fun)]
+
+			d1.push(di);
+		}
+
+    var plot_conf = {
+      series: {
+        lines: {
+          show: true,
+          lineWidth: 1
+        }
+      }
+    };
+
+		$.plot($("#placeholder"), [
+			{
+        label: fun,
+        color: 4,
+				data: d1,
+				lines: { show: true, fill: false }
+			},
+		], plot_conf);
+
+
+
+
+		return false;
+	}
+
+	$("#redraw").click(function (e) {
+        e.preventDefault();
+        re_plot();
+    });
+});
+</script>
+
+
+ </body>
+</html>
