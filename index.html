@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel='stylesheet' href='/css/bootstrap.min.css' type='text/css' media='all'>
 
-    <script language="javascript" type="text/javascript" src="jquery/jquery.js"></script>
     <script language="javascript" type="text/javascript" src="jquery/jquery.flot.js"></script>
 
   </head>
@@ -21,7 +20,6 @@
   <body>
     <div class="container px-lg-0 my-5">
       <div class="row mx-lg-n5">
-        <div class="col-sm-9 ">
            <div>
              <div class="row mb-3">
                <h4>
@@ -32,15 +30,14 @@
              <form method="POST">
                <div class="form-group row ml-lg-4">
                  <label for="a1" class="col-sm-2 col-form-label"><span class="form_field">From:</span></label>
-                   <div class="col-md-4 ml-lg-n5">
-                     <input id="x" name = "x" type="text" class="form-control" value = "-10">
+                     <input id="x" name = "х" type="text" class="form-control" value = "-10">
                    </div>
                </div>
 
                <form>
                  <div class="form-group row ml-lg-4">
                    <label for="the_login" class="col-sm-2 col-form-label"><span class="form_field">To:</span></label>
-                     <div class="col-md-4 ml-lg-n5">
+                     <div class="сol-md-4 ml-lg-n5">
                        <input name = "y" type="text" class="form-control" id="y" value = "10">
                      </div>
                  </div>
@@ -49,7 +46,7 @@
                  <form>
                    <div class="form-group row ml-lg-4">
                      <label for="the_login" class="col-sm-2 col-form-label"><span class="form_field">Points:</span></label>
-                       <div class="col-md-4 ml-lg-n5">
+                       <div class="cоl-md-4 ml-lg-n5">
                          <input name = "hop" type="text" class="form-control" id="points" value = "100">
                        </div>
                    </div>
@@ -65,7 +62,7 @@
 
                <div class="row">
                <div class="col-4"></div>
-                 <div class="col-4 align-self-end">
+                 <div class="col-1 align-self-end">
                     &nbsp&nbsp
                     <button id="redraw" class="btn btn-outline-primary mt-2 my-sm-02" type="submit">&nbsp&nbsp&nbspOK!&nbsp&nbsp&nbsp</button>
                  </div>
@@ -103,14 +100,14 @@ $(function () {
     {
       points = 10;
     }
-    var hop = (to-from)/points;
+    var hop = (to-from);
 
     let fun = ($("#func").val());
     var d1 = [];
 
 		for (var x = from; x <= to; x += hop)
 		{
-      var di = [x, eval(fun)]
+      var di = [x, .eval(fun)]
 
 			d1.push(di);
 		}
