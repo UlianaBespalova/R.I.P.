@@ -1,0 +1,16 @@
+``{% load staticfiles %}
+
+<div  class="d-none d-lg-block">
+  <div class="row">
+    <div class="col-3">  <img src="{% static "pictures/avatarka1.jpg" %}" width="40" height="50" class="d-inline-block align-left" alt=""> </div>
+      <div class="col-9">
+        {{user.username}}
+        <div>
+          <font size="2em">
+            <a href="{% url 'settings' %}">Settings </a>
+            <a href="{% url 'logout' %}">Log out</a>
+          </font>
+        </div>
+      </div>
+    </div>
+  </div>

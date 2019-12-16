@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div >
+  <div class="row mb-3"><h4>
+    <span class="col-3"><a href="index_tag.html" style="color: #000080; text-decoration: none">
+      Tag:&nbsp {{ tg }}
+    </a></span>
+  </h4>
+  </div>
+
+  {% for question in questions_list.object_list %}
+  {% include "que/question.html" %}
+  {% endfor %}
+
+</div>
+
+{% include "paginator.html" %}
+{% endblock %}

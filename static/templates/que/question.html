@@ -1,0 +1,52 @@
+{% load staticfiles %}
+
+  <!--один вопрос-->
+  <div class="card w-90 my-2">
+  <div class="row">
+  <div class="col-md-1 my-4 ml-3 mr-2">
+  <img src="{% static "pictures/avatarka1.jpg" %}" width="60" height="75" class="d-inline-block align-left" alt="">
+  </div>
+
+  <div class="col-10 my-3 mx-lg-0 mx-md-3 mx-3">
+  <h5 class="card-title">
+    <a href="{% url 'one-question' qid=question.id %}" style="color: #0000CD; font-size: 1.1em;">
+    {{ question.title }}
+  </a> </h5>
+<p class="card-text">{{ question.content }}</p>
+
+
+<p class="card-text mt-n2"><small class="text-muted">Last updated 3 mins ago by {{question.author}}</small></p>
+<div class="row my-2">
+ <div class="col-2">
+   <a href="{% url 'one-question' qid=question.id %}" style="color: #0000CD;"> Answers ({{question.count_answers}})</a>
+ </div>
+
+ <div class="col-5">
+Tags:
+{% for t in question.tag_list%}
+&nbsp &nbsp<a href="{% url 'tag' tg=t %}" style="color: #0000CD;"> {{t}} &nbsp</a>
+{%endfor%}
+ </div>
+
+
+
+ <div class="col-4 d-none d-lg-block">
+     <div class="row justify-content-end">
+     <a class="like">
+       <button type="button" class="btn btn-outline-primary btn-sm  mx-2">
+         &nbsp Like &nbsp
+         <!--<input class="qty1" name="qty1" readonly="readonly" type="text" value="0" />-->
+         </button>
+         &nbsp {{question.overall_rating }} &nbsp&nbsp
+     </a>
+     <a class="dislike">
+       <button type="button" class="btn btn-outline-danger btn-sm  mx-2">
+         Dislike
+         </button>
+     </a>
+     </div>
+ </div>
+</div>
+</div>
+</div>
+</div>

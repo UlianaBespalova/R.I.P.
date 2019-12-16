@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+
+<!--Основной блок-->
+
+<div class="row">
+  <div class="col-md-1 my-4 mr-4 d-none d-lg-block">
+    <img src="{% static "pictures/avatarka2.jpg" %}" width="85" height="100" class="d-inline-block align-left" alt="">
+  </div>
+  <div class="col-10 my-3 mx-lg-0 mx-md-3 mx-3">
+    <h4 class="card-title"><font style="color: #000080">{{ question.title }}</font></h4>
+      <p class="card-text"> {{question.content}}</p>
+      <p class="card-text mt-n2"><small class="text-muted">Last updated 3 mins ago by {{question.author}}</small></p>
+        <div class="row my-2">
+          <div class="col-7">
+            Tags:
+            {% for t in question.tag_list%}
+            &nbsp &nbsp<a href="{% url 'tag' tg=t %}" style="color: #0000CD;"> {{t}} &nbsp</a>
+            {%endfor%}
+          </div>
+          <div class="col-4 d-none d-lg-block">
+            <div class="row justify-content-end">
+              <a class="like">
+                <button type="button" class="btn btn-outline-primary btn-sm  mx-2"> &nbsp Like   &nbsp
+                  <!--<input class="qty1" name="qty1" readonly="readonly" type="text" value="0" />-->
+                </button>
+                 &nbsp {{question.overall_rating }} &nbsp&nbsp
+              </a>
+                <a class="dislike">
+                  <button type="button" class="btn btn-outline-danger btn-sm  mx-2"> Dislike
+                    <!--<input class="qty2" name="qty2" readonly="readonly" type="text" value="0" />-->
+                  </button>
+                </a>
+            </div>
+         </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+
+
+<!--ответы-->
+
+{% for answer in answers %}
+{% include "ans/answer.html" %}
+{% endfor %}
+
+<hr>
+
+<form  method="POST" novalidate>
+  {% csrf_token %}
+  <div class="form-group">
+    <label for="the_answer"></label>
+      <textarea name = "content" class="form-control" id="the_answer" placeholder="Enter your answer here" rows="4" required></textarea>
+  </div>
+  <span style="color: red; text-decoration: none">{{form.errors.content}}</span>
+
+  {% if user.is_authenticated %}
+  <button class="btn btn-primary  mt-2 my-sm-0" type="submit">Answer</button>
+  {% else %}
+  <button class="btn btn-primary  mt-2 my-sm-0" type="submit" disabled>Answer</button>
+    &nbsp&nbsp Only registered users can answer the question&nbsp
+    <a href="{% url 'login' %}">Login</a>
+  {% endif %}
+
+</form>
+
+{% endblock %}

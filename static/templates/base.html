@@ -1,0 +1,114 @@
+</<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>AskMe</title>
+
+    <!-- my CSS -->
+    <link rel='stylesheet' href='ss-s.css' type='text/css'>
+    <script src="like.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel='stylesheet' href='/css/bootstrap.min.css' type='text/css' media='all'>
+  </head>
+
+
+  <body>
+  <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+
+    <a class="navbar-brand mr-lg-5" href="{% url 'index' %}">
+         <img src="{% static "pictures/logo.png" %}" width="200" height="50" class="d-inline-block align-top" alt=""></a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+      <ul class="navbar-nav mr-auto">
+        <li>
+          <form class="form-inline my-2 my-lg-0 mr-2">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-secondary  mt-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </li>
+        <li>
+          <div class="form-actions">
+            <a type="submit" class="btn btn-primary mx-lg-5 mt-lg-0 mt-sm-2 mt-2"  href="{% url 'ask' %}" role="button" aria-expanded="false">&nbsp&nbspAsk!&nbsp&nbsp </a>
+          </div>
+        </li>
+      </ul>
+
+
+   {% if user.is_authenticated %}
+   {% include "top_registered.html" %}
+   {% else %}
+   {% include "top_unregistered.html" %}
+   {% endif %}
+
+
+
+</div>
+</nav>
+<!--Конец шапки-->
+
+
+<!--Основной блок-->
+  <div class="container px-lg-0 my-5">
+    <div class="row mx-lg-n5">
+      <div class="col-sm-9 ">
+         <div>
+          {% block content %} {% endblock %}
+        </div>
+      </div>
+<!--Конец основного блока-->
+
+
+<!--БОКОВУШКИ-->
+      <div class="col-sm-3 mt-1 justify-content-end">
+            <div class="container">
+              <div align="left">
+                <h4><font color=#000080>Popular tags</font></h4>
+                  <a href="{% url 'tag' tg='627' %}" style="color: #0000CD; font-size: 1.2em; text-decoration: none">627 &nbsp</a>
+                  <a href="{% url 'tag' tg='bbb' %}" style="color: #4B0082; font-size: 1.1em; text-decoration: none">&nbsp&nbsp bbb &nbsp</a>
+                  <a href="{% url 'tag' tg='four' %}" style="color: #4169E1; font-size: 1.3em; text-decoration: none"> &nbsp &nbsp four &nbsp</a>
+                  <a href="{% url 'tag' tg='five' %}" style="color: #0000CD; font-size: 1.2em; text-decoration: none"> five &nbsp</a>
+                  <a href="{% url 'tag' tg='six' %}" style="color: #4B0082; font-size: 1.1em; text-decoration: none"><b> &nbsp &nbsp six &nbsp </b></a>
+                  <a href="{% url 'tag' tg='proba' %}" style="color: #4B0082; font-size: 1.1em; text-decoration: none"><b> &nbsp &nbsp proba &nbsp </b></a>
+                  <a href="{% url 'tag' tg='one' %}" style="color: #4169E1; font-size: 1.3em; text-decoration: none"> &nbsp one &nbsp</a>
+                  <a href="{% url 'tag' tg='aaa' %}" style="color: #0000CD; font-size: 1.2em; text-decoration: none"> &nbspaaa</a>
+        <!--Сделать нормально по-умному (узнать как)   -->
+             </div>
+            </div>
+
+          <div class="container mt-5">
+              <h4><font color=#000080>Best members</font></h4>
+            </div>
+            <div class="mx-n4">
+            <ul class="link_members" >
+              <li> <a href="....somewhere">Ivan</a> </li>
+              <li> <a href="....somewhere">Another Ivan</a> </li>
+              <li> <a href="....somewhere">Ivan the Clever</a> </li>
+              <li> <a href="....somewhere">Unexpected Ivan</a> </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>>

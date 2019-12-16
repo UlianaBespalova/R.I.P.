@@ -1,0 +1,45 @@
+{% load staticfiles %}
+
+
+<div class="card w-90 my-2">
+  <div class="row">
+    <div class="col-md-1 my-4 ml-3 mr-2">
+      <img src="{% static "pictures/avatarka3.jpg" %}" width="60" height="75" class="d-inline-block align-left" alt="">
+    </div>
+    <div class="col-10 my-3 mx-lg-0 mx-md-3 mx-3">
+      <p class="card-text"> {{answer.content}} </p>
+      <p class="card-text mt-n2"><small class="text-muted">Last updated 3 mins ago by {{answer.author}}</small></p>
+      <div class="row my-2">
+        <div class="col-7">
+          <div class="custom-control custom-checkbox">
+            {% ifequal answer.correct True %}
+            <input type="checkbox" class="custom-control-input" id="customCheck1" checked>
+            {% endifequal %}
+            {% ifequal answer.correct False %}
+            <input type="checkbox" class="custom-control-input" id="customCheck1">
+            {% endifequal %}
+
+            <label class="custom-control-label" for="customCheck1">Correct!</label>
+          </div>
+        </div>
+        <div class="col-4 d-none d-lg-block">
+            <div class="row justify-content-end">
+            <a class="like">
+              <button type="button" class="btn btn-outline-primary btn-sm  mx-2">
+                &nbsp Like   &nbsp
+                <!--<input class="qty1" name="qty1" readonly="readonly" type="text" value="0" />-->
+                </button>
+                &nbsp {{answer.overall_rating }} &nbsp&nbsp
+            </a>
+            <a class="dislike">
+              <button type="button" class="btn btn-outline-danger btn-sm  mx-2">
+                Dislike
+                <!--<input class="qty2" name="qty2" readonly="readonly" type="text" value="0" />-->
+                </button>
+            </a>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

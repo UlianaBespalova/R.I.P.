@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<div class="row mb-3">
+  <h4>
+    <span class="col-3"><a href="#" style="color: #000080; text-decoration: none">Registration</a></span>
+  </h4>
+</div>
+<form method = "POST" novalidate>
+{% csrf_token %}
+<div class="form-group row ml-lg-4">
+<label for="the_login" class="col-sm-3 col-form-label"><span class="form_field">Login</span></label>
+<div class="col-md-4 ml-lg-n3">
+{%if not user_name %}
+<input name = "user_name" type="text" class="form-control" id="the_login">
+{% else %}
+<input name = "user_name" type="text" class="form-control" id="the_login" value = {{user_name}}>
+{%endif%}
+</div>
+</div>
+<span style="color: red; text-decoration: none">{{form.errors.user_name}}</span>
+
+<div class="form-group row ml-lg-4">
+<label for="e_mail" class="col-sm-3 col-form-label"><span class="form_field">Email</span></label>
+<div class="col-md-4 ml-lg-n3">
+{%if not email %}
+<input name = "email" type="text" class="form-control" id="e_mail">
+{% else %}
+<input name = "email" type="text" class="form-control" id="e_mail" value = {{email}}>
+{%endif%}
+</div>
+</div>
+<span style="color: red; text-decoration: none">{{form.errors.email}}</span>
+
+<div class="form-group row ml-lg-4">
+<label for="nick_name" class="col-sm-3 col-form-label"><span class="form_field">Nickname</span></label>
+<div class="col-md-4 ml-lg-n3">
+{%if not nick_name %}
+<input name="nick_name" type="text" class="form-control" id="nick_name">
+{% else %}
+<input name="nick_name" type="text" class="form-control" id="nick_name" value = {{nick_name}}>
+{%endif%}
+</div>
+</div>
+<span style="color: red; text-decoration: none">{{form.errors.nick_name}}</span>
+
+<div class="form-group row ml-lg-4">
+<label for="the_password" class="col-sm-3 col-form-label"><span class="form_field">Password</span></label>
+<div class="col-md-4 ml-lg-n3">
+<input name="password" type="password" class="form-control" id="the_password" required>
+<small id="passwordHelpBlock" class="form-text text-muted">Your password must be 8-20 characters long, contain letters and numbers</small>
+</div>
+</div>
+<span style="color: red; text-decoration: none">{{form.errors.password}}</span>
+
+<div class="form-group row ml-lg-4">
+<label for="the_password_repeat" class="col-sm-3 col-form-label"><span class="form_field">Repeat password</span></label>
+<div class="col-md-4 ml-lg-n3">
+<input name="password_repeat" type="password" class="form-control" id="the_password_repeat" required>
+</div>
+</div>
+<span style="color: red; text-decoration: none">{{form.errors.password_repeat}}</span>
+
+<div class="form-group row ml-lg-4">
+<label for="custom_file" class="col-sm-3 col-form-label"><span class="form_field">Upload avatar</span></label>
+<div class="col-md-3">
+<input name="avatar" type="file" class="custom-file-input" id="custom_file">
+<label class="custom-file-label" for="custom_file">Choose file...</label>
+</div>
+</div>
+<span style="color: red; text-decoration: none">{{form.errors.avatar}}</span>
+
+
+
+<div class="row mt-5">
+  <div class="col-5"></div>
+    <div class="col-4 ml-lg-5 align-self-end">
+      <button class="btn btn-outline-primary mt-2 my-sm-0" type="submit">Register</button>
+  </div>
+</div>
+</form>
+
+
+{% endblock %}

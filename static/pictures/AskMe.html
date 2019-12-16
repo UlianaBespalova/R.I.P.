@@ -1,0 +1,194 @@
+<!--<!DOCTYPE html-->
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>AskMe</title>
+
+    <!-- my CSS -->
+    <link rel="stylesheet" href="AskMe_files/ss-s.html" type="text/css">
+    <script src="AskMe_files/like.html"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="AskMe_files/bootstrap.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="AskMe_files/bootstrap.html" type="text/css" media="all">
+  </head>
+
+
+  <body>
+  <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+
+    <a class="navbar-brand mr-lg-5" href="http://127.0.0.1:8000/">
+         <img src="AskMe_files/logo.png" class="d-inline-block align-top" alt="" width="200" height="50"></a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+      <ul class="navbar-nav mr-auto">
+        <li>
+          <form class="form-inline my-2 my-lg-0 mr-2">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-secondary  mt-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </li>
+        <li>
+          <div class="form-actions">
+            <a type="submit" class="btn btn-primary mx-lg-5 mt-lg-0 mt-sm-2 mt-2" href="http://127.0.0.1:8000/ask/" role="button" aria-expanded="false">&nbsp;&nbsp;Ask!&nbsp;&nbsp; </a>
+          </div>
+        </li>
+      </ul>
+
+
+   
+   <div class="d-none d-lg-block">
+  <div class="row">
+      <div class="col-9">
+        <div>
+          <font size="2em">
+            <a href="http://127.0.0.1:8000/login/">Log in</a>
+            <a href="http://127.0.0.1:8000/signup/">Log up</a>
+          </font>
+        </div>
+      </div>
+    </div>
+  </div>
+
+   
+
+
+
+</div>
+</nav>
+<!--Конец шапки-->
+
+
+<!--Основной блок-->
+  <div class="container px-lg-0 my-5">
+    <div class="row mx-lg-n5">
+      <div class="col-sm-9 ">
+         <div>
+          
+
+
+<div class="row mb-3">
+  <h4>
+    <span class="col-3"><a href="#" style="color: #000080; text-decoration: none">Registration</a></span>
+  </h4>
+</div>
+<form method="POST" novalidate="">
+<input type="hidden" name="csrfmiddlewaretoken" value="EkoX8OmQVBkbYXh43giEfMkEd6LwX3KTvXM7j99U2DD9Ngp4WAIFNbfZzKvmjfMz">
+<div class="form-group row ml-lg-4">
+<label for="the_login" class="col-sm-3 col-form-label"><span class="form_field">Login</span></label>
+<div class="col-md-4 ml-lg-n3">
+<input name="user_name" type="text" class="form-control" id="the_login" required="" value="Danny_Queen">
+</div>
+</div>
+<span style="color: red; text-decoration: none"></span>
+
+<div class="form-group row ml-lg-4">
+<label for="e_mail" class="col-sm-3 col-form-label"><span class="form_field">Email</span></label>
+<div class="col-md-4 ml-lg-n3">
+<input name="email" type="text" class="form-control" id="e_mail" required="">
+</div>
+</div>
+<span style="color: red; text-decoration: none"><ul class="errorlist"><li>This field is required.</li></ul></span>
+
+<div class="form-group row ml-lg-4">
+<label for="nick_name" class="col-sm-3 col-form-label"><span class="form_field">Nickname</span></label>
+<div class="col-md-4 ml-lg-n3">
+<input name="nick_name" type="text" class="form-control" id="nick_name" required="">
+</div>
+</div>
+<span style="color: red; text-decoration: none"><ul class="errorlist"><li>This field is required.</li></ul></span>
+
+<div class="form-group row ml-lg-4">
+<label for="the_password" class="col-sm-3 col-form-label"><span class="form_field">Password</span></label>
+<div class="col-md-4 ml-lg-n3">
+<input name="password" type="password" class="form-control" id="the_password" required="">
+<small id="passwordHelpBlock" class="form-text text-muted">Your password must be 8-20 characters long, contain letters and numbers</small>
+</div>
+</div>
+<span style="color: red; text-decoration: none"><ul class="errorlist"><li>This field is required.</li></ul></span>
+
+<div class="form-group row ml-lg-4">
+<label for="the_password_repeat" class="col-sm-3 col-form-label"><span class="form_field">Repeat password</span></label>
+<div class="col-md-4 ml-lg-n3">
+<input name="password_repeat" type="password" class="form-control" id="the_password_repeat" required="">
+</div>
+</div>
+<span style="color: red; text-decoration: none"><ul class="errorlist"><li>This field is required.</li></ul></span>
+
+<div class="form-group row ml-lg-4">
+<label for="custom_file" class="col-sm-3 col-form-label"><span class="form_field">Upload avatar</span></label>
+<div class="col-md-3">
+<input name="avatar" type="file" class="custom-file-input" id="custom_file">
+<label class="custom-file-label" for="custom_file">Choose file...</label>
+</div>
+</div>
+<span style="color: red; text-decoration: none"></span>
+
+
+
+<div class="row mt-5">
+  <div class="col-5"></div>
+    <div class="col-4 ml-lg-5 align-self-end">
+      <button class="btn btn-outline-primary mt-2 my-sm-0" type="submit">Register</button>
+  </div>
+</div>
+</form>
+
+
+
+        </div>
+      </div>
+<!--Конец основного блока-->
+
+
+<!--БОКОВУШКИ-->
+      <div class="col-sm-3 mt-1 justify-content-end">
+            <div class="container">
+              <div align="left">
+                <h4><font color="#000080">Popular tags</font></h4>
+                  <a href="http://127.0.0.1:8000/tag/627/" style="color: #0000CD; font-size: 1.2em; text-decoration: none">627 &nbsp;</a>
+                  <a href="http://127.0.0.1:8000/tag/bbb/" style="color: #4B0082; font-size: 1.1em; text-decoration: none">&nbsp;&nbsp; bbb &nbsp;</a>
+                  <a href="http://127.0.0.1:8000/tag/four/" style="color: #4169E1; font-size: 1.3em; text-decoration: none"> &nbsp; &nbsp; four &nbsp;</a>
+                  <a href="http://127.0.0.1:8000/tag/five/" style="color: #0000CD; font-size: 1.2em; text-decoration: none"> five &nbsp;</a>
+                  <a href="http://127.0.0.1:8000/tag/six/" style="color: #4B0082; font-size: 1.1em; text-decoration: none"><b> &nbsp; &nbsp; six &nbsp; </b></a>
+                  <a href="http://127.0.0.1:8000/tag/proba/" style="color: #4B0082; font-size: 1.1em; text-decoration: none"><b> &nbsp; &nbsp; proba &nbsp; </b></a>
+                  <a href="http://127.0.0.1:8000/tag/one/" style="color: #4169E1; font-size: 1.3em; text-decoration: none"> &nbsp; one &nbsp;</a>
+                  <a href="http://127.0.0.1:8000/tag/aaa/" style="color: #0000CD; font-size: 1.2em; text-decoration: none"> &nbsp;aaa</a>
+        <!--Сделать нормально по-умному (узнать как)   -->
+             </div>
+            </div>
+
+          <div class="container mt-5">
+              <h4><font color="#000080">Best members</font></h4>
+            </div>
+            <div class="mx-n4">
+            <ul class="link_members">
+              <li> <a href="http://127.0.0.1:8000/signup/....somewhere">Ivan</a> </li>
+              <li> <a href="http://127.0.0.1:8000/signup/....somewhere">Another Ivan</a> </li>
+              <li> <a href="http://127.0.0.1:8000/signup/....somewhere">Ivan the Clever</a> </li>
+              <li> <a href="http://127.0.0.1:8000/signup/....somewhere">Unexpected Ivan</a> </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="AskMe_files/jquery-3.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="AskMe_files/popper.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="AskMe_files/bootstrap.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  
+&gt;
+</body></html>
